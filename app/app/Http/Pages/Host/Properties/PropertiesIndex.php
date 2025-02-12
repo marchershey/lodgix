@@ -8,7 +8,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Usernotnull\Toast\Concerns\WireToast;
 
-#[Layout('layouts.app', ['title' => 'Properties'])]
+#[Layout('layouts.base', ['title' => 'Properties'])]
 class PropertiesIndex extends Component
 {
     use WireToast;

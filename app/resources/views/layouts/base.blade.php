@@ -27,7 +27,9 @@
     </script>
 </head>
 
-<body class="flex flex-col h-full overflow-hidden antialiased text-gray-600 transition-all duration-500 bg-gray-800 font-default overscroll-none">
+{{-- <body class="flex flex-col h-full overflow-hidden antialiased text-gray-600 transition-all duration-500 bg-gray-800 font-default overscroll-none"> --}}
+
+<body class="flex h-screen overflow-hidden bg-gray-100">
     <!-- Toasts -->
     @livewire('toasts')
     {{-- @persist('toast')
@@ -35,11 +37,13 @@
     @endpersist --}}
 
     <!-- Main Content -->
-    <div class="relative flex flex-auto overflow-hidden overscroll-none">
+    {{-- <div class="relative flex flex-auto overflow-hidden overscroll-none"> --}}
+    <div class="w-full">
         {{ $slot }}
     </div>
+    {{-- </div> --}}
 
-    <x-utilities.dev-bar />
+    {{-- <x-utilities.dev-bar /> --}}
 
     <!-- Livewire Script Config -->
     @livewireScriptConfig

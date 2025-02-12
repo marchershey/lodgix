@@ -18,6 +18,6 @@ class Host extends Component
      */
     public function render(): Closure|View|string
     {
-        return view('layouts.host');
+        return view('layouts.host-new');
     }
 }

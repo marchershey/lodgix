@@ -1,11 +1,11 @@
-<x-layouts.app title="{{ $title }}">
+<x-layouts.base title="{{ $title }}">
 
-    <div class="flex w-full flex-col bg-gray-200">
+    <div class="flex flex-col w-full bg-gray-200">
 
         {{-- Header --}}
         {{-- Fix this stupid shit with hiding header... --}}
         @if ($header ?? true)
-            <div class="page-padding flex border-b border-gray-300 bg-white py-1">
+            <div class="flex py-1 bg-white border-b border-gray-300 page-padding">
                 <div class="flex h-[49px] items-center">
                     <a href="{{ route('host.dashboard') }}" wire:navigate>
                         <x-logo textSize="text-xl tablet:text-2xl" iconSize="w-4 h-4" />
@@ -19,8 +19,8 @@
         {{-- Content --}}
         <div class="h-full overflow-y-auto">
 
-            <div class="flex h-full flex-col justify-between space-y-5">
-                <div class="page-padding flex-1">
+            <div class="flex flex-col justify-between h-full space-y-5">
+                <div class="flex-1 page-padding">
                     {{ $slot }}
                 </div>
 
@@ -32,4 +32,4 @@
     </div>
 
     @stack('scripts')
-</x-layouts.app>
+</x-layouts.base>

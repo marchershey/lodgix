@@ -8,7 +8,7 @@ use Livewire\Attributes\Url;
 use Livewire\Component;
 use Usernotnull\Toast\Concerns\WireToast;
 
-#[Layout('layouts.app', ['title' => 'Add Property'])]
+#[Layout('layouts.base', ['title' => 'Add Property'])]
 class ViewProperty extends Component
 {
     use WireToast;

@@ -13,7 +13,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Usernotnull\Toast\Concerns\WireToast;
 
-#[Layout('layouts.app', ['title' => 'Add Property'])]
+#[Layout('layouts.base', ['title' => 'Add Property'])]
 class NewProperty extends Component
 {
     use WireToast, WithFileUploads;
