@@ -15,7 +15,7 @@
         "livewire/flux": "v1.1.3",
         "livewire/flux-pro": "^1.0.29",
         "livewire/livewire": "v3.5.18",
-        "spatie/laravel-settings": "^3.4.0",
+        "spatie/laravel-settings": "^3.4.2",
         "usernotnull/tall-toasts": "v2.1.0"
     },
     "require-dev": {
