@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../../vendor/livewire/flux/dist/flux.css";
+
 @layer base {
     /* @font-face {
         font-family: "Inter";
@@ -14,7 +16,7 @@
         font-size: 14px;
     }
     #nprogress .bar {
-        @apply z-[2000] !h-1 !rounded-full !bg-primary;
+        @apply !bg-primary z-[2000] !h-1 !rounded-full;
     }
     #nprogress .bar {
         box-shadow:
@@ -22,14 +24,14 @@
             0 0 20px #3b82f6 !important;
     }
     #nprogress .peg {
-        @apply !hidden !w-full !rotate-0 rounded-full !bg-primary;
+        @apply !bg-primary !hidden !w-full !rotate-0 rounded-full;
     }
 
     #nprogress .spinner {
         @apply z-[2000];
     }
     #nprogress .spinner .spinner-icon {
-        @apply !h-6 !w-6 !border-4 !border-l-primary border-t-primary;
+        @apply !border-l-primary border-t-primary !h-6 !w-6 !border-4;
     }
     .sortable-chosen button {
         @apply !invisible;
@@ -38,14 +40,14 @@
         @apply !invisible;
     }
     .has-border {
-        @apply border-0 ring-1 ring-inset ring-gray-300;
+        @apply border-0 ring-1 ring-gray-300 ring-inset;
     }
 }
 
 @layer components {
     /* Typography */
     .link {
-        @apply cursor-pointer font-medium text-primary underline-offset-2 hover:underline focus-visible:outline-offset-4;
+        @apply text-primary cursor-pointer font-medium underline-offset-2 hover:underline focus-visible:outline-offset-4;
     }
     .link-muted {
         @apply !text-muted;
@@ -65,16 +67,16 @@
         @apply -page-x-padding -page-y-padding;
     }
     .page-x-padding {
-        @apply px-4 tablet-lg:px-6;
+        @apply tablet-lg:px-6 px-4;
     }
     .-page-x-padding {
-        @apply -mx-4 tablet-lg:-mx-6;
+        @apply tablet-lg:-mx-6 -mx-4;
     }
     .page-y-padding {
-        @apply py-4 tablet-lg:py-6;
+        @apply tablet-lg:py-6 py-4;
     }
     .-page-y-padding {
-        @apply -my-4 tablet-lg:-my-6;
+        @apply tablet-lg:-my-6 -my-4;
     }
 
     .page-container {
@@ -84,10 +86,10 @@
         @apply mb-8 border-b border-gray-300 bg-white;
     }
     .page-title {
-        @apply text-2xl font-bold text-gray-700 tablet-lg:font-bold;
+        @apply tablet-lg:font-bold text-2xl font-bold text-gray-700;
     }
     .page-desc {
-        @apply mt-2 text-muted;
+        @apply text-muted mt-2;
     }
     .page-actions > a[data-flux-button] {
         @apply -my-4;
@@ -96,15 +98,15 @@
         @apply flex flex-col space-y-10;
     }
     .page-footer {
-        @apply page-padding bg-gray-200 text-xs text-muted;
+        @apply page-padding text-muted bg-gray-200 text-xs;
     }
 
     /* Cards */
     /* .card-container {
-        @apply mx-0 w-full tablet:mx-6;
+        @apply w-full mx-0 tablet:mx-6;
     } */
     .card {
-        @apply has-border bg-white tablet:rounded-xl;
+        @apply has-border tablet:rounded-xl bg-white;
     }
     .card-padding {
         /* @apply px-6 py-8 tablet:px-8; */
@@ -120,13 +122,13 @@
         @apply flex flex-col space-y-2;
     }
     .card-header span {
-        @apply text-base font-semibold text-primary;
+        @apply text-primary text-base font-semibold;
     }
     .card-header h1 {
         @apply text-xl font-semibold;
     }
     .card-header p {
-        @apply text-base text-muted;
+        @apply text-muted text-base;
     }
 
     /* .card-form {
@@ -144,10 +146,10 @@
         @apply mb-10 flex flex-col space-y-10;
     }
     .form-section {
-        @apply grid grid-cols-1 gap-x-8 gap-y-4 laptop:grid-cols-3;
+        @apply laptop:grid-cols-3 grid grid-cols-1 gap-x-8 gap-y-4;
     }
     /* .form-section-details {
-        @apply page-x-padding flex flex-col justify-center space-y-0 tablet:p-0;
+        @apply flex flex-col justify-center space-y-0 page-x-padding tablet:p-0;
     }
     .form-section-header {
         @apply text-lg font-semibold;
@@ -175,13 +177,13 @@
 
     /* Form Elements */
     .form-label {
-        @apply block cursor-pointer pb-2 text-base font-medium leading-5 text-gray-800;
+        @apply block cursor-pointer pb-2 text-base leading-5 font-medium text-gray-800;
     }
     .form-label-error {
         @apply !text-red-500;
     }
     .form-desc {
-        @apply mt-2 block text-xs leading-5 text-muted;
+        @apply text-muted mt-2 block text-xs leading-5;
     }
     .form-desc-error {
         @apply !text-red-500;
@@ -189,11 +191,11 @@
 
     /* Form: input */
     .form-input-container {
-        @apply has-border flex w-full items-baseline rounded-md bg-gray-100 p-0 px-2.5 py-2 text-lg leading-5 ring-inset focus-within:bg-white focus-within:!shadow-none focus-within:!ring-2 focus-within:!ring-inset focus-within:!ring-primary hover:shadow hover:ring-1 hover:ring-gray-400/60;
+        @apply has-border focus-within:!ring-primary flex w-full items-baseline rounded-md bg-gray-100 p-0 px-2.5 py-2 text-lg leading-5 ring-inset focus-within:bg-white focus-within:!shadow-none focus-within:!ring-2 focus-within:!ring-inset hover:shadow hover:ring-1 hover:ring-gray-400/60;
     }
     .form-input {
-        @apply w-full border-0 bg-transparent p-0 placeholder:text-muted-light focus-within:placeholder-muted-lighter focus:outline-none focus:ring-0;
-        /* @apply has-border block w-full rounded-md border-0 bg-gray-100 px-3 py-2 text-lg leading-6 ring-inset placeholder:text-muted-light hover:shadow hover:ring-1 hover:ring-gray-400/60 focus:bg-white focus:placeholder-gray-200 focus:ring-2 focus:ring-inset focus:ring-primary tablet:text-base; */
+        @apply placeholder:text-muted-light focus-within:placeholder-muted-lighter w-full border-0 bg-transparent p-0 focus:ring-0 focus:outline-none;
+        /* @apply block w-full px-3 py-2 text-lg leading-6 bg-gray-100 border-0 rounded-md has-border ring-inset placeholder:text-muted-light hover:shadow hover:ring-1 hover:ring-gray-400/60 focus:bg-white focus:placeholder-gray-200 focus:ring-2 focus:ring-inset focus:ring-primary tablet:text-base; */
     }
     .form-input-error {
         @apply !ring-2 !ring-red-500;
@@ -201,7 +203,7 @@
 
     /* Form: counter */
     .form-counter {
-        @apply form-input flex overflow-hidden p-0 focus-within:bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary;
+        @apply form-input focus-within:ring-primary flex overflow-hidden p-0 focus-within:bg-white focus-within:ring-2 focus-within:ring-inset;
     }
     .form-counter input {
         @apply !w-full border-0 bg-transparent focus:ring-0;
@@ -210,7 +212,7 @@
         @apply flex p-px;
     }
     .form-counter-buttons button {
-        @apply border-t border-transparent px-2 hover:bg-primary hover:text-white hover:ring-1 hover:ring-primary;
+        @apply hover:bg-primary hover:ring-primary border-t border-transparent px-2 hover:text-white hover:ring-1;
     }
 
     /* Form: select */
@@ -243,7 +245,7 @@
         @apply flex items-center justify-between;
     }
     .form-toggle button {
-        @apply relative ml-4 inline-flex w-14 rounded-full bg-gray-100 py-1 ring-1 ring-gray-300 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary group-hover:ring-2 group-hover:ring-gray-400;
+        @apply focus-visible:ring-primary relative ml-4 inline-flex w-14 rounded-full bg-gray-100 py-1 ring-1 ring-gray-300 transition group-hover:ring-2 group-hover:ring-gray-400 focus-visible:ring-2 focus-visible:outline-none;
     }
     .form-toggle-error {
         @apply !ring-2 !ring-red-500;
@@ -252,24 +254,24 @@
         @apply h-5 w-5 rounded-full bg-white ring-1 ring-gray-300 transition-transform;
     }
     .form-toggle-button-active {
-        @apply !bg-primary focus-visible:!ring-black group-hover:!bg-primary-hover group-hover:!ring-0;
+        @apply !bg-primary group-hover:!bg-primary-hover group-hover:!ring-0 focus-visible:!ring-black;
     }
 
     /* Buttons */
     .button {
-        @apply flex h-[35px] cursor-pointer items-center justify-center rounded-md bg-primary px-3 py-2 text-center text-base font-medium text-white focus-visible:outline-offset-4;
+        @apply bg-primary flex h-[35px] cursor-pointer items-center justify-center rounded-md px-3 py-2 text-center text-base font-medium text-white focus-visible:outline-offset-4;
     }
     .button:disabled {
-        @apply cursor-not-allowed bg-opacity-50;
+        @apply bg-opacity-50 cursor-not-allowed;
     }
     .button-gray {
         @apply border border-gray-300 bg-gray-100 text-gray-600 ring-gray-300 hover:bg-gray-100 hover:ring-gray-400;
     }
     .button-link {
-        @apply bg-transparent text-primary;
+        @apply text-primary bg-transparent;
     }
     .button svg {
-        @apply -ml-1 mr-2 h-5 w-5;
+        @apply mr-2 -ml-1 h-5 w-5;
     }
     .button-wide {
         @apply !px-6;
@@ -303,16 +305,16 @@
 
     /** Uploader **/
     /* .uploader {
-        @apply flex cursor-pointer flex-col items-center justify-center space-y-4 rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 text-muted;
+        @apply flex flex-col items-center justify-center space-y-4 border-2 border-gray-200 border-dashed cursor-pointer rounded-xl bg-gray-50 text-muted;
     }
     .uploader .icon {
-        @apply m-3 rounded-full bg-gray-200/70 p-3 text-primary;
+        @apply p-3 m-3 rounded-full bg-gray-200/70 text-primary;
     }
     .uploader-body div {
         @apply text-center;
     }
     .uploader svg {
-        @apply h-12 w-12;
+        @apply w-12 h-12;
     }
     .uploader-body {
         @apply flex flex-col space-y-2;
@@ -333,23 +335,23 @@
     .button-link {
     }
     .button-primary {
-        @apply bg-primary text-white hover:bg-primary-hover active:bg-primary-active;
+        @apply text-white bg-primary hover:bg-primary-hover active:bg-primary-active;
     }
     .button-muted {
-        @apply bg-muted-lighter text-gray-800 ring-1 ring-gray-300 hover:bg-gray-300;
+        @apply text-gray-800 bg-muted-lighter ring-1 ring-gray-300 hover:bg-gray-300;
     }
     .button-muted-dark {
-        @apply bg-gray-900/70 text-white ring-1 ring-gray-700 hover:bg-gray-900;
+        @apply text-white bg-gray-900/70 ring-1 ring-gray-700 hover:bg-gray-900;
     }
     .button:disabled {
-        @apply cursor-not-allowed opacity-50 hover:bg-primary;
+        @apply opacity-50 cursor-not-allowed hover:bg-primary;
     } */
 
     .frontend-container {
-        @apply mx-auto flex max-w-screen-laptop flex-col space-y-10;
+        @apply max-w-screen-laptop mx-auto flex flex-col space-y-10;
     }
     .frontend-section {
-        @apply flex flex-col space-y-5 tablet:p-10;
+        @apply tablet:p-10 flex flex-col space-y-5;
     }
     .frontend-title {
         @apply text-3xl font-semibold;
@@ -357,7 +359,7 @@
 
     /* Properties */
     .frontend-property-grid {
-        @apply grid grid-cols-1 gap-10 tablet:grid-cols-3;
+        @apply tablet:grid-cols-3 grid grid-cols-1 gap-10;
     }
 }
 
@@ -398,7 +400,7 @@
     }
 
     kbd {
-        @apply has-border -my-1 rounded-lg bg-gray-200 px-1.5 py-1 font-mono text-[0.9em] uppercase tracking-wider text-gray-800;
+        @apply has-border -my-1 rounded-lg bg-gray-200 px-1.5 py-1 font-mono text-[0.9em] tracking-wider text-gray-800 uppercase;
     }
 
     .container {
@@ -412,10 +414,10 @@
     }
 
     .show-mobile {
-        @apply block laptop:hidden;
+        @apply laptop:hidden block;
     }
     .hide-mobile {
-        @apply hidden laptop:block;
+        @apply laptop:block hidden;
     }
 
     .flex-center {
@@ -433,7 +435,7 @@
     .label-space {
         @apply !mt-[31px];
     }
-    .color-input > input{
-        @apply p-0.5
+    .color-input > input {
+        @apply p-0.5;
     }
 }
